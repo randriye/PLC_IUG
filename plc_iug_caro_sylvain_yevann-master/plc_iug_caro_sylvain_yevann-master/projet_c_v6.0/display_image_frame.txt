@@ -1,0 +1,94 @@
+ei_point_t anchor;
+                anchor.x = sl.top_left.x;
+                anchor.y = sl.top_left.y;
+                ei_size_t global_size = sl.size;
+                ei_size_t clipper_size = super_clipper.size;
+                ei_point_t clipper_origin = super_clipper.top_left;
+                // anchor of the image
+                switch (((ei_frame_t *) widget )-> img_anchor) {
+                        case ei_anc_none:
+                                anchor.x += 0;
+                                anchor.y += 0;
+                                break;
+
+                        case ei_anc_north:
+                                anchor.x += (global_size.width - ir->size.width) / 2;
+                                anchor.y += 0;
+                                break;
+
+                        case ei_anc_northeast:
+                                anchor.x += (global_size.width - ir->size.width);
+                                anchor.y += 0;
+                                break;
+
+                        case ei_anc_east:
+                                anchor.x += (global_size.width - ir->size.width);
+                                anchor.y += (global_size.height - ir->size.height) / 2;
+                                break;
+
+                        case ei_anc_southeast:
+                                anchor.x += (global_size.width  - ir->size.width);
+                                anchor.y += (global_size.height - ir->size.height);
+                                break;
+
+                        case ei_anc_south:
+                                anchor.x += (global_size.width  - ir->size.width) / 2;
+                                anchor.y += (global_size.height - ir->size.height);
+                                break;
+
+                        case ei_anc_southwest:
+                                anchor.x += 0;
+                                anchor.y += (global_size.height - ir->size.height);
+                                break;
+
+                        case ei_anc_west:
+                                anchor.x += 0;
+                                anchor.y += (global_size.height - ir->size.height) / 2;
+                                break;
+                        case ei_anc_center:
+                                anchor.x += (global_size.width  - ir->size.width) / 2;
+                                anchor.y += (global_size.height - ir->size.height) / 2;
+                                break;
+
+                                case ei_anc_northwest:
+                                anchor.x += 0;
+                                anchor.y += 0;
+                                break;
+
+
+
+                        default:
+                                anchor.x += (global_size.width  - ir->size.width) / 2;
+                                anchor.y += (global_size.height - ir->size.height) / 2;
+                                break;
+
+                }
+                // compute of the dest_rect & src_rect (considering clipper)
+                ei_rect_t dest_rect;
+                ei_rect_t src_rect;
+                dest_rect = sl;
+                dest_rect.top_left = anchor;
+                if (dest_rect.top_left.x < super_clipper.top_left.x){
+                        src_rect.size.width -= super_clipper.top_left.x - dest_rect.top_left.x;
+                        src_rect.top_left.x += super_clipper.top_left.x - dest_rect.top_left.x;
+                        dest_rect.size.width -= super_clipper.top_left.x - dest_rect.top_left.x;
+                        dest_rect.top_left.x = super_clipper.top_left.x;
+                }
+                int off_x = dest_rect.top_left.x + dest_rect.size.width - super_clipper.top_left.x - super_clipper.size.width;
+                if (off_x > 0){
+                        src_rect.size.width -= off_x;
+                        dest_rect.size.width -= off_x;
+                }
+                if (dest_rect.top_left.y < super_clipper.top_left.y){
+                        src_rect.size.height -= super_clipper.top_left.y - dest_rect.top_left.y;
+                        src_rect.top_left.y += super_clipper.top_left.y - dest_rect.top_left.y;
+                        dest_rect.size.height -= super_clipper.top_left.y - dest_rect.top_left.y;
+                        dest_rect.top_left.y = super_clipper.top_left.y;
+                }
+                int off_y = dest_rect.top_left.y + dest_rect.size.height - super_clipper.top_left.y - super_clipper.size.height;
+                if (off_y > 0){
+                        src_rect.size.width -= off_y;
+                        dest_rect.size.width -= off_y;
+                }
+
+                ei_copy_surface(surface, &dest_rect, image, &src_rect, EI_TRUE);

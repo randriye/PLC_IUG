@@ -1,0 +1,1002 @@
+/*
+ *  clavier.c
+ *
+ *  Created by Caroline Wang on 27.05.21.
+ *
+ */
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+#include "ei_application.h"
+#include "ei_widget.h"
+#include "ei_utils.h"
+#include "ei_event.h"
+
+
+ei_bool_t global_event_handler(ei_event_t* event) {
+        if (event->type == ei_ev_keydown) {
+                if (event->param.key.key_code == SDLK_ESCAPE) {
+                        ei_app_quit_request();
+                        return EI_TRUE;
+                }
+
+
+                if (event->param.key.key_code == SDLK_1) {
+                        printf("1");
+                        return EI_TRUE;
+                }
+                if (event->param.key.key_code == SDLK_2) {
+                        printf("2");
+                        return EI_TRUE;
+                }
+                if (event->param.key.key_code == SDLK_3) {
+                        printf("3");
+                        return EI_TRUE;
+                }
+                if (event->param.key.key_code == SDLK_4) {
+                        printf("4");
+                        return EI_TRUE;
+                }
+                if (event->param.key.key_code == SDLK_5) {
+                        printf("5");
+                        return EI_TRUE;
+                }
+                if (event->param.key.key_code == SDLK_6) {
+                        printf("6");
+                        return EI_TRUE;
+                }
+                if (event->param.key.key_code == SDLK_7) {
+                        printf("7");
+                        return EI_TRUE;
+                }
+                if (event->param.key.key_code == SDLK_8) {
+                        printf("8");
+                        return EI_TRUE;
+                }
+                if (event->param.key.key_code == SDLK_9) {
+                        printf("9");
+                        return EI_TRUE;
+                }
+                if (event->param.key.key_code == SDLK_0) {
+                        printf("0");
+                        return EI_TRUE;
+                }
+                if (event->param.key.key_code == SDLK_a) {
+                        printf("a");
+                        return EI_TRUE;
+                }
+                if (event->param.key.key_code == SDLK_b) {
+                        printf("b");
+                        return EI_TRUE;
+                }
+                if (event->param.key.key_code == SDLK_c) {
+                        printf("c");
+                        return EI_TRUE;
+                }
+                if (event->param.key.key_code == SDLK_d) {
+                        printf("d");
+                        return EI_TRUE;
+                }
+                if (event->param.key.key_code == SDLK_e) {
+                        printf("e");
+                        return EI_TRUE;
+                }
+                if (event->param.key.key_code == SDLK_f) {
+                        printf("f");
+                        return EI_TRUE;
+                }
+                if (event->param.key.key_code == SDLK_g) {
+                        printf("g");
+                        return EI_TRUE;
+                }
+                if (event->param.key.key_code == SDLK_h) {
+                        printf("h");
+                        return EI_TRUE;
+                }
+                if (event->param.key.key_code == SDLK_i) {
+                        printf("i");
+                        return EI_TRUE;
+                }
+                if (event->param.key.key_code == SDLK_j) {
+                        printf("j");
+                        return EI_TRUE;
+                }
+                if (event->param.key.key_code == SDLK_k) {
+                        printf("k");
+                        return EI_TRUE;
+                }
+                if (event->param.key.key_code == SDLK_l) {
+                        printf("l");
+                        return EI_TRUE;
+                }
+                if (event->param.key.key_code == SDLK_m) {
+                        printf("m");
+                        return EI_TRUE;
+                }
+                if (event->param.key.key_code == SDLK_n) {
+                        printf("n");
+                        return EI_TRUE;
+                }
+                if (event->param.key.key_code == SDLK_o) {
+                        printf("o");
+                        return EI_TRUE;
+                }
+                if (event->param.key.key_code == SDLK_p) {
+                        printf("p");
+                        return EI_TRUE;
+                }
+                if (event->param.key.key_code == SDLK_q) {
+                        printf("q");
+                        return EI_TRUE;
+                }
+                if (event->param.key.key_code == SDLK_r) {
+                        printf("r");
+                        return EI_TRUE;
+                }
+                if (event->param.key.key_code == SDLK_s) {
+                        printf("s");
+                        return EI_TRUE;
+                }
+                if (event->param.key.key_code == SDLK_t) {
+                        printf("t");
+                        return EI_TRUE;
+                }
+                if (event->param.key.key_code == SDLK_u) {
+                        printf("u");
+                        return EI_TRUE;
+                }
+                if (event->param.key.key_code == SDLK_v) {
+                        printf("v");
+                        return EI_TRUE;
+                }
+                if (event->param.key.key_code == SDLK_w) {
+                        printf("w");
+                        return EI_TRUE;
+                }
+                if (event->param.key.key_code == SDLK_x) {
+                        printf("x");
+                        return EI_TRUE;
+                }
+                if (event->param.key.key_code == SDLK_y) {
+                        printf("y");
+                        return EI_TRUE;
+                }
+                if (event->param.key.key_code == SDLK_z) {
+                        printf("z");
+                        return EI_TRUE;
+                }
+                if (event->param.key.key_code == SDLK_COMMA) {
+                        printf(",");
+                        return EI_TRUE;
+                }
+                if (event->param.key.key_code == SDLK_PAUSE) {
+                        printf(".");
+                        return EI_TRUE;
+                }
+                if (event->param.key.key_code == SDLK_SLASH) {
+                        printf("/");
+                        return EI_TRUE;
+                }
+                if (event->param.key.key_code == SDLK_EXCLAIM) {
+                        printf("!");
+                        return EI_TRUE;
+                }
+                if (event->param.key.key_code == SDLK_SPACE) {
+                        printf(" ");
+                        return EI_TRUE;
+                }
+                if (event->param.key.key_code == SDLK_RETURN) {
+                        printf("\n");
+                        return EI_TRUE;
+                }
+
+        }
+}
+/*
+ * button_a_press-
+ *
+ *	Callback called when a user clicks on the button.
+ */
+
+void button_1_press(ei_widget_t* widget, ei_event_t* event, void* user_param)
+{
+        printf("1");
+}
+void button_2_press(ei_widget_t* widget, ei_event_t* event, void* user_param)
+{
+        printf("2");
+}
+void button_3_press(ei_widget_t* widget, ei_event_t* event, void* user_param)
+{
+        printf("3");
+}
+void button_4_press(ei_widget_t* widget, ei_event_t* event, void* user_param)
+{
+        printf("4");
+}
+void button_5_press(ei_widget_t* widget, ei_event_t* event, void* user_param)
+{
+        printf("5");
+}
+void button_6_press(ei_widget_t* widget, ei_event_t* event, void* user_param)
+{
+        printf("6");
+}
+void button_7_press(ei_widget_t* widget, ei_event_t* event, void* user_param)
+{
+        printf("7");
+}void button_8_press(ei_widget_t* widget, ei_event_t* event, void* user_param)
+{
+        printf("8");
+}
+void button_9_press(ei_widget_t* widget, ei_event_t* event, void* user_param)
+{
+        printf("9");
+}
+void button_0_press(ei_widget_t* widget, ei_event_t* event, void* user_param)
+{
+        printf("0");
+}
+void button_virgule_press(ei_widget_t* widget, ei_event_t* event, void* user_param)
+{
+        printf(",");
+}void button_point_press(ei_widget_t* widget, ei_event_t* event, void* user_param)
+{
+        printf(".");
+}
+void button_slash_press(ei_widget_t* widget, ei_event_t* event, void* user_param)
+{
+        printf("/");
+}
+void button_exclamation_press(ei_widget_t* widget, ei_event_t* event, void* user_param)
+{
+        printf("!");
+}
+void button_a_press(ei_widget_t* widget, ei_event_t* event, void* user_param)
+{
+        printf("a");
+}
+void button_b_press(ei_widget_t* widget, ei_event_t* event, void* user_param)
+{
+        printf("b");
+}
+void button_c_press(ei_widget_t* widget, ei_event_t* event, void* user_param)
+{
+        printf("c");
+}
+void button_d_press(ei_widget_t* widget, ei_event_t* event, void* user_param)
+{
+        printf("d");
+}
+void button_e_press(ei_widget_t* widget, ei_event_t* event, void* user_param)
+{
+        printf("e");
+}
+void button_f_press(ei_widget_t* widget, ei_event_t* event, void* user_param)
+{
+        printf("f");
+}
+void button_g_press(ei_widget_t* widget, ei_event_t* event, void* user_param)
+{
+        printf("g");
+}void button_h_press(ei_widget_t* widget, ei_event_t* event, void* user_param)
+{
+        printf("h");
+}
+void button_i_press(ei_widget_t* widget, ei_event_t* event, void* user_param)
+{
+        printf("i");
+}
+void button_j_press(ei_widget_t* widget, ei_event_t* event, void* user_param)
+{
+        printf("j");
+}
+void button_k_press(ei_widget_t* widget, ei_event_t* event, void* user_param)
+{
+        printf("k");
+}
+void button_l_press(ei_widget_t* widget, ei_event_t* event, void* user_param)
+{
+        printf("l");
+}
+void button_m_press(ei_widget_t* widget, ei_event_t* event, void* user_param)
+{
+        printf("m");
+}
+void button_n_press(ei_widget_t* widget, ei_event_t* event, void* user_param)
+{
+        printf("n");
+}
+void button_o_press(ei_widget_t* widget, ei_event_t* event, void* user_param)
+{
+        printf("o");
+}
+void button_p_press(ei_widget_t* widget, ei_event_t* event, void* user_param)
+{
+        printf("p");
+}
+void button_q_press(ei_widget_t* widget, ei_event_t* event, void* user_param)
+{
+        printf("q");
+}
+void button_r_press(ei_widget_t* widget, ei_event_t* event, void* user_param)
+{
+        printf("r");
+}void button_s_press(ei_widget_t* widget, ei_event_t* event, void* user_param)
+{
+        printf("s");
+}
+void button_t_press(ei_widget_t* widget, ei_event_t* event, void* user_param)
+{
+        printf("t");
+}
+void button_u_press(ei_widget_t* widget, ei_event_t* event, void* user_param)
+{
+        printf("u");
+}
+void button_v_press(ei_widget_t* widget, ei_event_t* event, void* user_param)
+{
+        printf("v");
+}
+void button_w_press(ei_widget_t* widget, ei_event_t* event, void* user_param)
+{
+        printf("w");
+}
+void button_x_press(ei_widget_t* widget, ei_event_t* event, void* user_param)
+{
+        printf("x");
+}
+void button_y_press(ei_widget_t* widget, ei_event_t* event, void* user_param)
+{
+        printf("y");
+}
+void button_z_press(ei_widget_t* widget, ei_event_t* event, void* user_param)
+{
+        printf("z");
+}
+void button_enter_press(ei_widget_t* widget, ei_event_t* event, void* user_param)
+{
+        printf("\n");
+}
+void button_space_press(ei_widget_t* widget, ei_event_t* event, void* user_param)
+{
+        printf(" ");
+}
+
+
+
+/*
+ * process_key --
+ *
+ *	Callback called when any key is a_press by the user.
+ *	Simply looks for the "Escape" key to request the application to quit.
+ */
+ei_bool_t process_key(ei_event_t* event)
+{
+        if (event->type == ei_ev_keydown)
+                if (event->param.key.key_code == SDLK_ESCAPE) {
+                        ei_app_quit_request();
+                        return EI_TRUE;
+                }
+
+        return EI_FALSE;
+}
+
+/*
+ * ei_main --
+ *
+ *	Main function of the application.
+ */
+int main(int argc, char** argv)
+{
+        ei_size_t	screen_size		= {800, 600};
+        ei_color_t	root_bgcol		= {0x52, 0x7f, 0xb4, 0xff};
+
+        ei_anchor_t	button_anchor		= ei_anc_southeast;
+        int		button_px		= 0;
+        int		button_py		= 0;
+        float		button_rel_width	= 0.06;
+        float		button_rel_height	= 0.09;
+        ei_color_t	button_color		= {0x88, 0x88, 0x88, 0xff};
+        ei_color_t	button_text_color	= {0x00, 0x00, 0x00, 0xff};
+        ei_relief_t	button_relief		= ei_relief_raised;
+        int		button_border_width	= 1;
+        int             button_corner_radius    = 0;
+
+        ei_widget_t*	button_1;
+        float		button_1_rel_x		= 0.15;
+        float		button_1_rel_y		= 0.27;
+        char*		button_1_title		= "1";
+        ei_callback_t	button_1_callback 	= button_1_press;
+
+        ei_widget_t*	button_2;
+        float		button_2_rel_x		= 0.15;
+        float		button_2_rel_y		= 0.27;
+        char*		button_2_title		= "2";
+        ei_callback_t	button_2_callback 	= button_2_press;
+
+        ei_widget_t*	button_3;
+        float		button_3_rel_x		= 0.23;
+        float		button_3_rel_y		= 0.27;
+        char*		button_3_title		= "3";
+        ei_callback_t	button_3_callback 	= button_3_press;
+
+        ei_widget_t*	button_4;
+        float		button_4_rel_x		= 0.31;
+        float		button_4_rel_y		= 0.27;
+        char*		button_4_title		= "4";
+        ei_callback_t	button_4_callback 	= button_4_press;
+
+        ei_widget_t*	button_5;
+        float		button_5_rel_x		= 0.39;
+        float		button_5_rel_y		= 0.27;
+        char*		button_5_title		= "5";
+        ei_callback_t	button_5_callback 	= button_5_press;
+
+        ei_widget_t*	button_6;
+        float		button_6_rel_x		= 0.47;
+        float		button_6_rel_y		= 0.27;
+        char*		button_6_title		= "6";
+        ei_callback_t	button_6_callback 	= button_6_press;
+
+
+
+        ei_widget_t*	button_7;
+        float		button_7_rel_x		= 0.55;
+        float		button_7_rel_y		= 0.27;
+        char*		button_7_title		= "7";
+        ei_callback_t	button_7_callback 	= button_7_press;
+
+
+        ei_widget_t*	button_8;
+        float		button_8_rel_x		= 0.63;
+        float		button_8_rel_y		= 0.27;
+        char*		button_8_title		= "8";
+        ei_callback_t	button_8_callback 	= button_8_press;
+
+        ei_widget_t*	button_9;
+        float		button_9_rel_x		= 0.71;
+        float		button_9_rel_y		= 0.27;
+        char*		button_9_title		= "9";
+        ei_callback_t	button_9_callback 	= button_9_press;
+
+        ei_widget_t*	button_0;
+        float		button_0_rel_x		= 0.79;
+        float		button_0_rel_y		= 0.27;
+        char*		button_0_title		= "0";
+        ei_callback_t	button_0_callback 	= button_0_press;
+
+
+        ei_widget_t*	button_a;
+        float		button_a_rel_x		= 0.12;
+        float		button_a_rel_y		= 0.42;
+        char*		button_a_title		= "a";
+        ei_callback_t	button_a_callback 	= button_a_press;
+
+        ei_widget_t*	button_z;
+        float		button_z_rel_x		= 0.20;
+        float		button_z_rel_y		= 0.42;
+        char*		button_z_title		= "z";
+        ei_callback_t	button_z_callback 	= button_z_press;
+
+        ei_widget_t*	button_e;
+        float		button_e_rel_x		= 0.28;
+        float		button_e_rel_y		= 0.42;
+        char*		button_e_title		= "e";
+        ei_callback_t	button_e_callback 	= button_e_press;
+
+        ei_widget_t*	button_r;
+        float		button_r_rel_x		= 0.36;
+        float		button_r_rel_y		= 0.42;
+        char*		button_r_title		= "r";
+        ei_callback_t	button_r_callback 	= button_r_press;
+
+        ei_widget_t*	button_t;
+        float		button_t_rel_x		= 0.44;
+        float		button_t_rel_y		= 0.42;
+        char*		button_t_title		= "t";
+        ei_callback_t	button_t_callback 	= button_t_press;
+
+        ei_widget_t*	button_y;
+        float		button_y_rel_x		= 0.52;
+        float		button_y_rel_y		= 0.42;
+        char*		button_y_title		= "y";
+        ei_callback_t	button_y_callback 	= button_y_press;
+
+        ei_widget_t*	button_u;
+        float		button_u_rel_x		= 0.6;
+        float		button_u_rel_y		= 0.42;
+        char*		button_u_title		= "u";
+        ei_callback_t	button_u_callback 	= button_u_press;
+
+        ei_widget_t*	button_i;
+        float		button_i_rel_x		= 0.68;
+        float		button_i_rel_y		= 0.42;
+        char*		button_i_title		= "i";
+        ei_callback_t	button_i_callback 	= button_i_press;
+
+        ei_widget_t*	button_o;
+        float		button_o_rel_x		= 0.76;
+        float		button_o_rel_y		= 0.42;
+        char*		button_o_title		= "o";
+        ei_callback_t	button_o_callback 	= button_o_press;
+
+        ei_widget_t*	button_p;
+        float		button_p_rel_x		= 0.84;
+        float		button_p_rel_y		= 0.42;
+        char*		button_p_title		= "p";
+        ei_callback_t	button_p_callback 	= button_p_press;
+
+
+        ei_widget_t*	button_q;
+        float		button_q_rel_x		= 0.14;
+        float		button_q_rel_y		= 0.580;
+        char*		button_q_title		= "q";
+        ei_callback_t	button_q_callback 	= button_q_press;
+
+        ei_widget_t*	button_s;
+        float		button_s_rel_x		= 0.22;
+        float		button_s_rel_y		= 0.580;
+        char*		button_s_title		= "s";
+        ei_callback_t	button_s_callback 	= button_s_press;
+
+        ei_widget_t*	button_d;
+        float		button_d_rel_x		= 0.30;
+        float		button_d_rel_y		= 0.580;
+        char*		button_d_title		= "d";
+        ei_callback_t	button_d_callback 	= button_d_press;
+
+        ei_widget_t*	button_f;
+        float		button_f_rel_x		= 0.38;
+        float		button_f_rel_y		= 0.580;
+        char*		button_f_title		= "f";
+        ei_callback_t	button_f_callback 	= button_f_press;
+
+        ei_widget_t*	button_g;
+        float		button_g_rel_x		= 0.46;
+        float		button_g_rel_y		= 0.580;
+        char*		button_g_title		= "g";
+        ei_callback_t	button_g_callback 	= button_g_press;
+
+        ei_widget_t*	button_h;
+        float		button_h_rel_x		= 0.54;
+        float		button_h_rel_y		= 0.580;
+        char*		button_h_title		= "h";
+        ei_callback_t	button_h_callback 	= button_h_press;
+
+        ei_widget_t*	button_j;
+        float		button_j_rel_x		= 0.62;
+        float		button_j_rel_y		= 0.580;
+        char*		button_j_title		= "j";
+        ei_callback_t	button_j_callback 	= button_j_press;
+
+        ei_widget_t*	button_k;
+        float		button_k_rel_x		= 0.70;
+        float		button_k_rel_y		= 0.580;
+        char*		button_k_title		= "k";
+        ei_callback_t	button_k_callback 	= button_k_press;
+
+        ei_widget_t*	button_l;
+        float		button_l_rel_x		= 0.78;
+        float		button_l_rel_y		= 0.580;
+        char*		button_l_title		= "l";
+        ei_callback_t	button_l_callback 	= button_l_press;
+
+        ei_widget_t*	button_m;
+        float		button_m_rel_x		= 0.86;
+        float		button_m_rel_y		= 0.580;
+        char*		button_m_title		= "m";
+        ei_callback_t	button_m_callback 	= button_m_press;
+
+        ei_widget_t*	button_w;
+        float		button_w_rel_x		= 0.16;
+        float		button_w_rel_y		= 0.75;
+        char*		button_w_title		= "w";
+        ei_callback_t	button_w_callback 	= button_w_press;
+
+        ei_widget_t*	button_x;
+        float		button_x_rel_x		= 0.24;
+        float		button_x_rel_y		= 0.75;
+        char*		button_x_title		= "x";
+        ei_callback_t	button_x_callback 	= button_x_press;
+
+        ei_widget_t*	button_c;
+        float		button_c_rel_x		= 0.32;
+        float		button_c_rel_y		= 0.75;
+        char*		button_c_title		= "c";
+        ei_callback_t	button_c_callback 	= button_c_press;
+
+
+        ei_widget_t*	button_v;
+        float		button_v_rel_x		= 0.40;
+        float		button_v_rel_y		= 0.75;
+        char*		button_v_title		= "v";
+        ei_callback_t	button_v_callback 	= button_v_press;
+
+        ei_widget_t*	button_b;
+        float		button_b_rel_x		= 0.48;
+        float		button_b_rel_y		= 0.75;
+        char*		button_b_title		= "b";
+        ei_callback_t	button_b_callback 	= button_b_press;
+
+        ei_widget_t*	button_n;
+        float		button_n_rel_x		= 0.56;
+        float		button_n_rel_y		= 0.75;
+        char*		button_n_title		= "n";
+        ei_callback_t	button_n_callback 	= button_n_press;
+
+        ei_widget_t*	button_virgule;
+        float		button_virgule_rel_x	= 0.64;
+        float		button_virgule_rel_y	= 0.75;
+        char*		button_virgule_title	= ",";
+        ei_callback_t	button_virgule_callback = button_virgule_press;
+
+        ei_widget_t*	button_point;
+        float		button_point_rel_x	= 0.72;
+        float		button_point_rel_y	= 0.75;
+        char*		button_point_title	= ".";
+        ei_callback_t	button_point_callback 	= button_point_press;
+
+        ei_widget_t*	button_slash;
+        float		button_slash_rel_x	= 0.80;
+        float		button_slash_rel_y	= 0.75;
+        char*		button_slash_title	= "/";
+        ei_callback_t	button_slash_callback 	= button_slash_press;
+
+        ei_widget_t*	button_exclamation;
+        float		button_exclamation_rel_x	= 0.88;
+        float		button_exclamation_rel_y	= 0.75;
+        char*		button_exclamation_title	= "!";
+        ei_callback_t	button_exclamation_callback 	= button_exclamation_press;
+
+        ei_widget_t*	button_space;
+        float		button_space_rel_width	= 0.7;
+        float		button_space_rel_height	= 0.09;
+        float		button_space_rel_x      = 0.85;
+        float		button_space_rel_y	= 0.9;
+        char*		button_space_title	= "Space";
+        ei_callback_t	button_space_callback 	= button_space_press;
+
+        ei_widget_t*	button_enter;
+        float		button_enter_rel_width	= 0.10;
+        float		button_enter_rel_height	= 0.2;
+        float		button_enter_rel_x	= 0.97;
+        float		button_enter_rel_y	= 0.58;
+        char*		button_enter_title	= "Enter";
+        ei_callback_t	button_enter_callback 	= button_enter_press;
+
+
+        ei_widget_t*	window;
+        ei_size_t	window_size		= {320,240};
+        char*		window_title		= "Hello World";
+        ei_color_t	window_color		= {0xA0,0xA0,0xA0, 0xff};
+        int		window_border_width	= 1;
+        ei_bool_t	window_closable		= EI_TRUE;
+        ei_axis_set_t	window_resizable	= ei_axis_both;
+        ei_point_t	window_position		= {30, 10};
+
+
+        /* Create the application and change the color of the background. */
+        ei_app_create(screen_size, EI_FALSE);
+        ei_frame_configure(ei_app_root_widget(), NULL, &root_bgcol, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+        ei_event_set_default_handle_func(process_key);
+
+        /* Create, configure and place a toplevel window on screen. */
+        window = ei_widget_create("toplevel", ei_app_root_widget(), NULL, NULL);
+        ei_toplevel_configure(window, &window_size, &window_color, &window_border_width,
+                              &window_title, &window_closable, &window_resizable, NULL);
+        ei_place(window, NULL, &(window_position.x), &(window_position.y), NULL, NULL, NULL, NULL, NULL, NULL);
+
+//	/* Create, configure and place a button as a descendant of the toplevel window. */
+
+
+        ei_event_set_default_handle_func(global_event_handler);
+//button_1
+        button_1 = ei_widget_create("button", window, NULL, NULL);
+        ei_button_configure	(button_1, NULL, &button_color,
+                                    &button_border_width, &button_corner_radius, &button_relief, &button_1_title, NULL, &button_text_color, NULL,
+                                    NULL, NULL, NULL, &button_1_callback, NULL);
+        ei_place(button_1, &button_anchor, &button_px, &button_py, NULL, NULL, &button_1_rel_x, &button_1_rel_y, &button_rel_width, &button_rel_height);
+
+// button_2
+        button_2 = ei_widget_create("button", window, NULL, NULL);
+        ei_button_configure	(button_2, NULL, &button_color,
+                                    &button_border_width, &button_corner_radius, &button_relief, &button_2_title, NULL, &button_text_color, NULL,
+                                    NULL, NULL, NULL, &button_2_callback, NULL);
+        ei_place(button_2, &button_anchor, &button_px, &button_py, NULL, NULL, &button_2_rel_x, &button_2_rel_y, &button_rel_width, &button_rel_height);
+
+// button_3
+        button_3 = ei_widget_create("button", window, NULL, NULL);
+        ei_button_configure	(button_3, NULL, &button_color,
+                                    &button_border_width, &button_corner_radius, &button_relief, &button_3_title, NULL, &button_text_color, NULL,
+                                    NULL, NULL, NULL, &button_3_callback, NULL);
+        ei_place(button_3, &button_anchor, &button_px, &button_py, NULL, NULL, &button_3_rel_x, &button_3_rel_y, &button_rel_width, &button_rel_height);
+
+// button_4
+        button_4 = ei_widget_create("button", window, NULL, NULL);
+        ei_button_configure	(button_4, NULL, &button_color,
+                                    &button_border_width, &button_corner_radius, &button_relief, &button_4_title, NULL, &button_text_color, NULL,
+                                    NULL, NULL, NULL, &button_4_callback, NULL);
+        ei_place(button_4, &button_anchor, &button_px, &button_py, NULL, NULL, &button_4_rel_x, &button_4_rel_y, &button_rel_width, &button_rel_height);
+
+//button_5
+        button_5 = ei_widget_create("button", window, NULL, NULL);
+        ei_button_configure	(button_5, NULL, &button_color,
+                                    &button_border_width, &button_corner_radius, &button_relief, &button_5_title, NULL, &button_text_color, NULL,
+                                    NULL, NULL, NULL, &button_5_callback, NULL);
+        ei_place(button_5, &button_anchor, &button_px, &button_py, NULL, NULL, &button_5_rel_x, &button_5_rel_y, &button_rel_width, &button_rel_height);
+
+// button_6
+        button_6 = ei_widget_create("button", window, NULL, NULL);
+        ei_button_configure	(button_6, NULL, &button_color,
+                                    &button_border_width, &button_corner_radius, &button_relief, &button_6_title, NULL, &button_text_color, NULL,
+                                    NULL, NULL, NULL, &button_6_callback, NULL);
+        ei_place(button_6, &button_anchor, &button_px, &button_py, NULL, NULL, &button_6_rel_x, &button_6_rel_y, &button_rel_width, &button_rel_height);
+
+
+// button_7
+        button_7 = ei_widget_create("button", window, NULL, NULL);
+        ei_button_configure	(button_7, NULL, &button_color,
+                                    &button_border_width, &button_corner_radius, &button_relief, &button_7_title, NULL, &button_text_color, NULL,
+                                    NULL, NULL, NULL, &button_7_callback, NULL);
+        ei_place(button_7, &button_anchor, &button_px, &button_py, NULL, NULL, &button_7_rel_x, &button_7_rel_y, &button_rel_width, &button_rel_height);
+
+// button_8
+        button_8 = ei_widget_create("button", window, NULL, NULL);
+        ei_button_configure	(button_8, NULL, &button_color,
+                                    &button_border_width, &button_corner_radius, &button_relief, &button_8_title, NULL, &button_text_color, NULL,
+                                    NULL, NULL, NULL, &button_8_callback, NULL);
+        ei_place(button_8, &button_anchor, &button_px, &button_py, NULL, NULL, &button_8_rel_x, &button_8_rel_y, &button_rel_width, &button_rel_height);
+
+//button_9
+        button_9 = ei_widget_create("button", window, NULL, NULL);
+        ei_button_configure	(button_9, NULL, &button_color,
+                                    &button_border_width, &button_corner_radius, &button_relief, &button_9_title, NULL, &button_text_color, NULL,
+                                    NULL, NULL, NULL, &button_9_callback, NULL);
+        ei_place(button_9, &button_anchor, &button_px, &button_py, NULL, NULL, &button_9_rel_x, &button_9_rel_y, &button_rel_width, &button_rel_height);
+
+
+//button_0
+        button_0 = ei_widget_create("button", window, NULL, NULL);
+        ei_button_configure	(button_0, NULL, &button_color,
+                                    &button_border_width, &button_corner_radius, &button_relief, &button_0_title, NULL, &button_text_color, NULL,
+                                    NULL, NULL, NULL, &button_0_callback, NULL);
+        ei_place(button_0, &button_anchor, &button_px, &button_py, NULL, NULL, &button_0_rel_x, &button_0_rel_y, &button_rel_width, &button_rel_height);
+
+// button_a
+        button_a = ei_widget_create("button", window, NULL, NULL);
+        ei_button_configure	(button_a, NULL, &button_color,
+                                    &button_border_width, &button_corner_radius, &button_relief, &button_a_title, NULL, &button_text_color, NULL,
+                                    NULL, NULL, NULL, &button_a_callback, NULL);
+        ei_place(button_a, &button_anchor, &button_px, &button_py, NULL, NULL, &button_a_rel_x, &button_a_rel_y, &button_rel_width, &button_rel_height);
+
+// button_z
+        button_z = ei_widget_create("button", window, NULL, NULL);
+        ei_button_configure	(button_z, NULL, &button_color,
+                                    &button_border_width, &button_corner_radius, &button_relief, &button_z_title, NULL, &button_text_color, NULL,
+                                    NULL, NULL, NULL, &button_z_callback, NULL);
+        ei_place(button_z, &button_anchor, &button_px, &button_py, NULL, NULL, &button_z_rel_x, &button_z_rel_y, &button_rel_width, &button_rel_height);
+
+// button_e
+        button_e = ei_widget_create("button", window, NULL, NULL);
+        ei_button_configure	(button_e, NULL, &button_color,
+                                    &button_border_width, &button_corner_radius, &button_relief, &button_e_title, NULL, &button_text_color, NULL,
+                                    NULL, NULL, NULL, &button_e_callback, NULL);
+        ei_place(button_e, &button_anchor, &button_px, &button_py, NULL, NULL, &button_e_rel_x, &button_e_rel_y, &button_rel_width, &button_rel_height);
+
+// button_r
+        button_r = ei_widget_create("button", window, NULL, NULL);
+        ei_button_configure	(button_r, NULL, &button_color,
+                                    &button_border_width, &button_corner_radius, &button_relief, &button_r_title, NULL, &button_text_color, NULL,
+                                    NULL, NULL, NULL, &button_r_callback, NULL);
+        ei_place(button_r, &button_anchor, &button_px, &button_py, NULL, NULL, &button_r_rel_x, &button_r_rel_y, &button_rel_width, &button_rel_height);
+
+// button_t
+        button_t = ei_widget_create("button", window, NULL, NULL);
+        ei_button_configure	(button_t, NULL, &button_color,
+                                    &button_border_width, &button_corner_radius, &button_relief, &button_t_title, NULL, &button_text_color, NULL,
+                                    NULL, NULL, NULL, &button_t_callback, NULL);
+        ei_place(button_t, &button_anchor, &button_px, &button_py, NULL, NULL, &button_t_rel_x, &button_t_rel_y, &button_rel_width, &button_rel_height);
+
+//button_y
+        button_y = ei_widget_create("button", window, NULL, NULL);
+        ei_button_configure	(button_y, NULL, &button_color,
+                                    &button_border_width, &button_corner_radius, &button_relief, &button_y_title, NULL, &button_text_color, NULL,
+                                    NULL, NULL, NULL, &button_y_callback, NULL);
+        ei_place(button_y, &button_anchor, &button_px, &button_py, NULL, NULL, &button_y_rel_x, &button_y_rel_y, &button_rel_width, &button_rel_height);
+
+// button_u
+        button_u = ei_widget_create("button", window, NULL, NULL);
+        ei_button_configure	(button_u, NULL, &button_color,
+                                    &button_border_width, &button_corner_radius, &button_relief, &button_u_title, NULL, &button_text_color, NULL,
+                                    NULL, NULL, NULL, &button_u_callback, NULL);
+        ei_place(button_u, &button_anchor, &button_px, &button_py, NULL, NULL, &button_u_rel_x, &button_u_rel_y, &button_rel_width, &button_rel_height);
+
+// button_i
+        button_i = ei_widget_create("button", window, NULL, NULL);
+        ei_button_configure	(button_i, NULL, &button_color,
+                                    &button_border_width, &button_corner_radius, &button_relief, &button_i_title, NULL, &button_text_color, NULL,
+                                    NULL, NULL, NULL, &button_i_callback, NULL);
+        ei_place(button_i, &button_anchor, &button_px, &button_py, NULL, NULL, &button_i_rel_x, &button_i_rel_y, &button_rel_width, &button_rel_height);
+
+// button_o
+        button_o = ei_widget_create("button", window, NULL, NULL);
+        ei_button_configure	(button_o, NULL, &button_color,
+                                    &button_border_width, &button_corner_radius, &button_relief, &button_o_title, NULL, &button_text_color, NULL,
+                                    NULL, NULL, NULL, &button_o_callback, NULL);
+        ei_place(button_o, &button_anchor, &button_px, &button_py, NULL, NULL, &button_o_rel_x, &button_o_rel_y, &button_rel_width, &button_rel_height);
+
+//button_p
+        button_p = ei_widget_create("button", window, NULL, NULL);
+        ei_button_configure	(button_p, NULL, &button_color,
+                                    &button_border_width, &button_corner_radius, &button_relief, &button_p_title, NULL, &button_text_color, NULL,
+                                    NULL, NULL, NULL, &button_p_callback, NULL);
+        ei_place(button_p, &button_anchor, &button_px, &button_py, NULL, NULL, &button_p_rel_x, &button_p_rel_y, &button_rel_width, &button_rel_height);
+
+        // button_q
+        button_q = ei_widget_create("button", window, NULL, NULL);
+        ei_button_configure	(button_q, NULL, &button_color,
+                                    &button_border_width, &button_corner_radius, &button_relief, &button_q_title, NULL, &button_text_color, NULL,
+                                    NULL, NULL, NULL, &button_q_callback, NULL);
+        ei_place(button_q, &button_anchor, &button_px, &button_py, NULL, NULL, &button_q_rel_x, &button_q_rel_y, &button_rel_width, &button_rel_height);
+
+// button_s
+        button_s = ei_widget_create("button", window, NULL, NULL);
+        ei_button_configure	(button_s, NULL, &button_color,
+                                    &button_border_width, &button_corner_radius, &button_relief, &button_s_title, NULL, &button_text_color, NULL,
+                                    NULL, NULL, NULL, &button_s_callback, NULL);
+        ei_place(button_s, &button_anchor, &button_px, &button_py, NULL, NULL, &button_s_rel_x, &button_s_rel_y, &button_rel_width, &button_rel_height);
+
+
+// button_d
+        button_d = ei_widget_create("button", window, NULL, NULL);
+        ei_button_configure	(button_d, NULL, &button_color,
+                                    &button_border_width, &button_corner_radius, &button_relief, &button_d_title, NULL, &button_text_color, NULL,
+                                    NULL, NULL, NULL, &button_d_callback, NULL);
+        ei_place(button_d, &button_anchor, &button_px, &button_py, NULL, NULL, &button_d_rel_x, &button_d_rel_y, &button_rel_width, &button_rel_height);
+
+// button_f
+        button_f = ei_widget_create("button", window, NULL, NULL);
+        ei_button_configure	(button_f, NULL, &button_color,
+                                    &button_border_width, &button_corner_radius, &button_relief, &button_f_title, NULL, &button_text_color, NULL,
+                                    NULL, NULL, NULL, &button_f_callback, NULL);
+        ei_place(button_f, &button_anchor, &button_px, &button_py, NULL, NULL, &button_f_rel_x, &button_f_rel_y, &button_rel_width, &button_rel_height);
+
+// button_g
+        button_g = ei_widget_create("button", window, NULL, NULL);
+        ei_button_configure	(button_g, NULL, &button_color,
+                                    &button_border_width, &button_corner_radius, &button_relief, &button_g_title, NULL, &button_text_color, NULL,
+                                    NULL, NULL, NULL, &button_g_callback, NULL);
+        ei_place(button_g, &button_anchor, &button_px, &button_py, NULL, NULL, &button_g_rel_x, &button_g_rel_y, &button_rel_width, &button_rel_height);
+
+//button_h
+        button_h = ei_widget_create("button", window, NULL, NULL);
+        ei_button_configure	(button_h, NULL, &button_color,
+                                    &button_border_width, &button_corner_radius, &button_relief, &button_h_title, NULL, &button_text_color, NULL,
+                                    NULL, NULL, NULL, &button_h_callback, NULL);
+        ei_place(button_h, &button_anchor, &button_px, &button_py, NULL, NULL, &button_h_rel_x, &button_h_rel_y, &button_rel_width, &button_rel_height);
+
+        //button_j
+        button_j = ei_widget_create("button", window, NULL, NULL);
+        ei_button_configure	(button_j, NULL, &button_color,
+                                    &button_border_width, &button_corner_radius, &button_relief, &button_j_title, NULL, &button_text_color, NULL,
+                                    NULL, NULL, NULL, &button_j_callback, NULL);
+        ei_place(button_j, &button_anchor, &button_px, &button_py, NULL, NULL, &button_j_rel_x, &button_j_rel_y, &button_rel_width, &button_rel_height);
+
+// button_k
+        button_k = ei_widget_create("button", window, NULL, NULL);
+        ei_button_configure	(button_k, NULL, &button_color,
+                                    &button_border_width, &button_corner_radius, &button_relief, &button_k_title, NULL, &button_text_color, NULL,
+                                    NULL, NULL, NULL, &button_k_callback, NULL);
+        ei_place(button_k, &button_anchor, &button_px, &button_py, NULL, NULL, &button_k_rel_x, &button_k_rel_y, &button_rel_width, &button_rel_height);
+
+// button_l
+        button_l = ei_widget_create("button", window, NULL, NULL);
+        ei_button_configure	(button_l, NULL, &button_color,
+                                    &button_border_width, &button_corner_radius, &button_relief, &button_l_title, NULL, &button_text_color, NULL,
+                                    NULL, NULL, NULL, &button_l_callback, NULL);
+        ei_place(button_l, &button_anchor, &button_px, &button_py, NULL, NULL, &button_l_rel_x, &button_l_rel_y, &button_rel_width, &button_rel_height);
+
+// button_m
+        button_m = ei_widget_create("button", window, NULL, NULL);
+        ei_button_configure	(button_m, NULL, &button_color,
+                                    &button_border_width, &button_corner_radius, &button_relief, &button_m_title, NULL, &button_text_color, NULL,
+                                    NULL, NULL, NULL, &button_m_callback, NULL);
+        ei_place(button_m, &button_anchor, &button_px, &button_py, NULL, NULL, &button_m_rel_x, &button_m_rel_y, &button_rel_width, &button_rel_height);
+
+//button_w
+        button_w = ei_widget_create("button", window, NULL, NULL);
+        ei_button_configure	(button_w, NULL, &button_color,
+                                    &button_border_width, &button_corner_radius, &button_relief, &button_w_title, NULL, &button_text_color, NULL,
+                                    NULL, NULL, NULL, &button_w_callback, NULL);
+        ei_place(button_w, &button_anchor, &button_px, &button_py, NULL, NULL, &button_w_rel_x, &button_w_rel_y, &button_rel_width, &button_rel_height);
+
+// button_x
+        button_x = ei_widget_create("button", window, NULL, NULL);
+        ei_button_configure	(button_x, NULL, &button_color,
+                                    &button_border_width, &button_corner_radius, &button_relief, &button_x_title, NULL, &button_text_color, NULL,
+                                    NULL, NULL, NULL, &button_x_callback, NULL);
+        ei_place(button_x, &button_anchor, &button_px, &button_py, NULL, NULL, &button_x_rel_x, &button_x_rel_y, &button_rel_width, &button_rel_height);
+
+
+// button_c
+        button_c = ei_widget_create("button", window, NULL, NULL);
+        ei_button_configure	(button_c, NULL, &button_color,
+                                    &button_border_width, &button_corner_radius, &button_relief, &button_c_title, NULL, &button_text_color, NULL,
+                                    NULL, NULL, NULL, &button_c_callback, NULL);
+        ei_place(button_c, &button_anchor, &button_px, &button_py, NULL, NULL, &button_c_rel_x, &button_c_rel_y, &button_rel_width, &button_rel_height);
+
+
+// button_v
+        button_v = ei_widget_create("button", window, NULL, NULL);
+        ei_button_configure	(button_v, NULL, &button_color,
+                                    &button_border_width, &button_corner_radius, &button_relief, &button_v_title, NULL, &button_text_color, NULL,
+                                    NULL, NULL, NULL, &button_v_callback, NULL);
+        ei_place(button_v, &button_anchor, &button_px, &button_py, NULL, NULL, &button_v_rel_x, &button_v_rel_y, &button_rel_width, &button_rel_height);
+
+// button_b
+        button_b = ei_widget_create("button", window, NULL, NULL);
+        ei_button_configure	(button_b, NULL, &button_color,
+                                    &button_border_width, &button_corner_radius, &button_relief, &button_b_title, NULL, &button_text_color, NULL,
+                                    NULL, NULL, NULL, &button_b_callback, NULL);
+        ei_place(button_b, &button_anchor, &button_px, &button_py, NULL, NULL, &button_b_rel_x, &button_b_rel_y, &button_rel_width, &button_rel_height);
+
+// button_n
+        button_n = ei_widget_create("button", window, NULL, NULL);
+        ei_button_configure	(button_n, NULL, &button_color,
+                                    &button_border_width, &button_corner_radius, &button_relief, &button_n_title, NULL, &button_text_color, NULL,
+                                    NULL, NULL, NULL, &button_n_callback, NULL);
+        ei_place(button_n, &button_anchor, &button_px, &button_py, NULL, NULL, &button_n_rel_x, &button_n_rel_y, &button_rel_width, &button_rel_height);
+
+// button_virgule
+        button_virgule = ei_widget_create("button", window, NULL, NULL);
+        ei_button_configure	(button_virgule, NULL, &button_color,
+                                    &button_border_width, &button_corner_radius, &button_relief, &button_virgule_title, NULL, &button_text_color, NULL,
+                                    NULL, NULL, NULL, &button_virgule_callback, NULL);
+        ei_place(button_virgule, &button_anchor, &button_px, &button_py, NULL, NULL, &button_virgule_rel_x, &button_virgule_rel_y, &button_rel_width, &button_rel_height);
+
+// button_point
+        button_point = ei_widget_create("button", window, NULL, NULL);
+        ei_button_configure	(button_point, NULL, &button_color,
+                                    &button_border_width, &button_corner_radius, &button_relief, &button_point_title, NULL, &button_text_color, NULL,
+                                    NULL, NULL, NULL, &button_point_callback, NULL);
+        ei_place(button_point, &button_anchor, &button_px, &button_py, NULL, NULL, &button_point_rel_x, &button_point_rel_y, &button_rel_width, &button_rel_height);
+
+// button_slash
+        button_slash = ei_widget_create("button", window, NULL, NULL);
+        ei_button_configure	(button_slash, NULL, &button_color,
+                                    &button_border_width, &button_corner_radius, &button_relief, &button_slash_title, NULL, &button_text_color, NULL,
+                                    NULL, NULL, NULL, &button_slash_callback, NULL);
+        ei_place(button_slash, &button_anchor, &button_px, &button_py, NULL, NULL, &button_slash_rel_x, &button_slash_rel_y, &button_rel_width, &button_rel_height);
+
+//button_exclamation
+        button_exclamation = ei_widget_create("button", window, NULL, NULL);
+        ei_button_configure	(button_exclamation, NULL, &button_color,
+                                    &button_border_width, &button_corner_radius, &button_relief, &button_exclamation_title, NULL, &button_text_color, NULL,
+                                    NULL, NULL, NULL, &button_exclamation_callback, NULL);
+        ei_place(button_exclamation, &button_anchor, &button_px, &button_py, NULL, NULL, &button_exclamation_rel_x, &button_exclamation_rel_y, &button_rel_width, &button_rel_height);
+
+//button_space
+        button_space = ei_widget_create("button", window, NULL, NULL);
+        ei_button_configure	(button_space, NULL, &button_color,
+                                    &button_border_width, &button_corner_radius, &button_relief, &button_space_title, NULL, &button_text_color, NULL,
+                                    NULL, NULL, NULL, &button_space_callback, NULL);
+        ei_place(button_space, &button_anchor, &button_px, &button_py, NULL, NULL, &button_space_rel_x, &button_space_rel_y, &button_space_rel_width, &button_space_rel_height);
+
+        //button_enter
+button_enter = ei_widget_create("button", window, NULL, NULL);
+ei_button_configure	(button_enter, NULL, &button_color,
+                            &button_border_width, &button_corner_radius, &button_relief, &button_enter_title, NULL, &button_text_color, NULL,
+                            NULL, NULL, NULL, &button_enter_callback, NULL);
+ei_place(button_enter, &button_anchor, &button_px, &button_py, NULL, NULL, &button_enter_rel_x, &button_enter_rel_y, &button_enter_rel_width, &button_enter_rel_height);
+
+
+        /* Run the application's main loop. */
+        ei_app_run();
+
+        ei_app_free();
+
+        return (EXIT_SUCCESS);
+}

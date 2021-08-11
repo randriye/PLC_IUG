@@ -1,0 +1,103 @@
+ei_point_t anchor;
+                anchor.x = sl.top_left.x + bw;
+                anchor.y = sl.top_left.y + bw;
+                ei_size_t global_size = sl.size;
+                global_size.height -= 2*bw;
+                global_size.width -= 2*bw;
+                ei_rect_t  img_rect;
+                if (ir == NULL){
+                        img_rect = hw_surface_get_rect(image);
+                }else{
+                        img_rect = *ir;
+                }
+                // anchor of the image
+                ei_anchor_t indice = ((ei_frame_t *) widget )-> img_anchor;
+                switch (indice) {
+                        case ei_anc_none:
+                                anchor.x += 0;
+                                anchor.y += 0;
+                                break;
+
+                        case ei_anc_north:
+                                anchor.x += (global_size.width - img_rect.size.width) / 2;
+                                anchor.y += 0;
+                                break;
+
+                        case ei_anc_northeast:
+                                anchor.x += (global_size.width - img_rect.size.width);
+                                anchor.y += 0;
+                                break;
+
+                        case ei_anc_east:
+                                anchor.x += (global_size.width - img_rect.size.width);
+                                anchor.y += (global_size.height - img_rect.size.height) / 2;
+                                break;
+
+                        case ei_anc_southeast:
+                                anchor.x += (global_size.width  - img_rect.size.width);
+                                anchor.y += (global_size.height - img_rect.size.height);
+                                break;
+
+                        case ei_anc_south:
+                                anchor.x += (global_size.width  - img_rect.size.width) / 2;
+                                anchor.y += (global_size.height - img_rect.size.height);
+                                break;
+
+                        case ei_anc_southwest:
+                                anchor.x += 0;
+                                anchor.y += (global_size.height - img_rect.size.height);
+                                break;
+
+                        case ei_anc_west:
+                                anchor.x += 0;
+                                anchor.y += (global_size.height - img_rect.size.height) / 2;
+                                break;
+                        case ei_anc_center:
+                                anchor.x += (global_size.width  - img_rect.size.width) / 2;
+                                anchor.y += (global_size.height - img_rect.size.height) / 2;
+                                break;
+
+                        case ei_anc_northwest:
+                                anchor.x += 0;
+                                anchor.y += 0;
+                                break;
+
+
+
+                        default:
+                                anchor.x += (global_size.width  - img_rect.size.width) / 2;
+                                anchor.y += (global_size.height - img_rect.size.height) / 2;
+                                break;
+
+                }
+                // compute of the dest_rect & src_rect (considering clipper)
+                ei_rect_t dest_rect;
+                ei_rect_t src_rect = img_rect;
+                dest_rect = sl;
+                dest_rect.top_left = anchor;
+                // check the dest rect compared to the super clipper and reduce the size if necessary
+                if (dest_rect.top_left.x < super_clipper.top_left.x){
+                        src_rect.size.width -= ( super_clipper.top_left.x - src_rect.top_left.x);
+                        dest_rect.size.width -= (super_clipper.top_left.x - dest_rect.top_left.x);
+                        dest_rect.top_left.x = super_clipper.top_left.x;
+                }
+                if (dest_rect.top_left.y < super_clipper.top_left.y){
+                        src_rect.size.height -= ( super_clipper.top_left.y - src_rect.top_left.y);
+                        dest_rect.size.height -= (super_clipper.top_left.y - dest_rect.top_left.y);
+                        dest_rect.top_left.y = super_clipper.top_left.y;
+                }
+
+                if (dest_rect.size.width > src_rect.size.width){
+                        dest_rect.size.width = src_rect.size.width;
+                }
+                if (dest_rect.size.height > src_rect.size.height){
+                        dest_rect.size.height = src_rect.size.height;
+                }
+
+                if ((dest_rect.size.width <= 0) || (dest_rect.size.height <= 0)){
+                        printf("caca\n");
+                        return;
+                }
+                ei_copy_surface(surface, &dest_rect, image, &src_rect, EI_TRUE);
+        }
+        free_polygon(&first_point);

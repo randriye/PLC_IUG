@@ -1,0 +1,14 @@
+static void del_head_cpt(ei_linked_clipped_point_t **cpl){
+        ei_linked_clipped_point_t *suiv = (*cpl)->next;
+        free(*cpl);
+        *cpl = suiv;
+}
+
+
+static void free_clipped_point_list(ei_linked_clipped_point_t *to_free){
+        ei_linked_clipped_point_t* next = to_free -> next;
+        while(to_free != NULL){
+                del_head_cpt(&to_free);
+        }
+        free(to_free);
+}
